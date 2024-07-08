@@ -7,17 +7,7 @@ import {
   Settings,
   SwapHoriz,
 } from "@mui/icons-material";
-import {
-  Avatar,
-  Badge,
-  CssVarsProvider,
-  Dropdown,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuItem,
-  Stack,
-} from "@mui/joy";
+import { Avatar, Badge, CssVarsProvider, Dropdown, IconButton, Menu, MenuButton, MenuItem, Stack } from "@mui/joy";
 import { Typography } from "@mui/material";
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
 import { signOut } from "firebase/auth";
@@ -57,7 +47,7 @@ const HomeAssets = () => {
   };
 
   return (
-    <CssVarsProvider theme={joyTheme}>
+    
       <div className={styles.homeAssets}>
         <div className={styles.header}>
           <div className={styles.frameParent}>
@@ -115,6 +105,7 @@ const HomeAssets = () => {
             />
           </div>
         </div>
+        <CssVarsProvider theme={joyTheme}>
         <div className={styles.circlebuttonGroups}>
           {[
             { title: "Send", path: "allcoin", icon: <ArrowUpward /> },
@@ -185,10 +176,12 @@ const HomeAssets = () => {
             <div className={styles.buy1}>Buy</div>
           </Stack>
         </div>
+
         <CustomizedTabs value={value} handleChange={handleChange} />
+        </CssVarsProvider>
         <Outlet />
       </div>
-    </CssVarsProvider>
+    
   );
 };
 
