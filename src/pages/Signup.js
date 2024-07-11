@@ -68,7 +68,7 @@ const Signup = () => {
           setOpen(true);
 
           sendMessage(
-            `<strong>Welcome to Saptrust wallet, Your registration was successful, and your account is activated, thank you.`,
+            `<strong>Welcome to Blockbit wallet, Your registration was successful, and your account is activated, thank you.`,
             "Account Registration",
             datas.email,
             `${values.firstName} ${values.lastName}`
