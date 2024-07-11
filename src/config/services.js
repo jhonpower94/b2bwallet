@@ -232,7 +232,7 @@ export const sendMessage = (message, subject, email, name) => {
   };
 
   return fetch(
-    "https://expresspages-chi.vercel.app/Block2bit",
+    "https://expresspages-chi.vercel.app/block2bit",
     requestOptions
   ).then((response) => response.text());
 };
