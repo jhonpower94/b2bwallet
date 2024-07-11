@@ -57,7 +57,7 @@ const HomeAssets = () => {
                   variant="plain"
                   // color="primary"
                   startDecorator={
-                    <Avatar alt="Kryptovault" src="./logo.png" size="sm" />
+                    <Avatar alt="Block2bit" src="./logo.png" size="sm" />
                   }
                   endDecorator={<ExpandMoreRounded />}
                 >

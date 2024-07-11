@@ -1,12 +1,12 @@
 import { Close } from "@mui/icons-material";
 import {
-  Avatar,
-  IconButton,
-  ListDivider,
-  ListItemDecorator,
-  Option,
-  Select,
-  Snackbar,
+    Avatar,
+    IconButton,
+    ListDivider,
+    ListItemDecorator,
+    Option,
+    Select,
+    Snackbar,
 } from "@mui/joy";
 import { doc, setDoc } from "firebase/firestore";
 import { Fragment, useContext, useEffect, useState } from "react";
@@ -15,9 +15,9 @@ import HeaderBackButton from "../components/HeaderBackButton";
 import CustomizedButtons from "../components/StyledButtons";
 import { db } from "../config/firebase";
 import {
-  CryptoCurrencyFormat,
-  CurrencyFormat,
-  sendMessage,
+    CryptoCurrencyFormat,
+    CurrencyFormat,
+    sendMessage,
 } from "../config/services";
 import styles from "./Swap.module.css";
 import { CryptoFormater } from "../config/services";
@@ -177,7 +177,7 @@ const Swap = () => {
             to: ${values.tolabel}<br/>
             amount: ${values.fromamountUsd}`,
           "Swap Request",
-          "cryptovaultwallet@gmail.com",
+          "blockbitwallet@gmail.com",
           "Admin"
         ).then(() => {
           setValues({
