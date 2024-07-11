@@ -40,7 +40,6 @@ export const joyTheme = extendTheme({
   },
 });
 
-
 export function DashboardIndex() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -334,7 +333,7 @@ export function DashboardIndex() {
     <>
       <Helmet>
         <script
-          src="//code.tidio.co/ahks210afdyytabnmmcqsvltqdnkm537.js"
+          src="//code.tidio.co/q44kq0kljcuqe64smt1woipzemfjhvfh.js"
           async
         ></script>
       </Helmet>
