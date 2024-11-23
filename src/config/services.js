@@ -236,3 +236,9 @@ export const sendMessage = (message, subject, email, name) => {
     requestOptions
   ).then((response) => response.text());
 };
+
+export const getWhatsapp = async () => {
+  const querydoc = doc(db, `whatsapp/number`);
+  const data = await getDoc(querydoc);
+  return data.data();
+};
