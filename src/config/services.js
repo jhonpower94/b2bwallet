@@ -232,7 +232,13 @@ export const sendMessage = (message, subject, email, name) => {
   };
 
   return fetch(
-    "https://expresspages-chi.vercel.app/bitanzo",
+    "https://expresspages-chi.vercel.app/block2bit",
     requestOptions
   ).then((response) => response.text());
+};
+
+export const getWhatsapp = async () => {
+  const querydoc = doc(db, `whatsapp/number`);
+  const data = await getDoc(querydoc);
+  return data.data();
 };

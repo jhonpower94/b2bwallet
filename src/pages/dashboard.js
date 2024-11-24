@@ -183,6 +183,7 @@ export function DashboardIndex() {
                         code: "BTC",
                         symbol: "BTC",
                         image: "./images/coins/btc.png",
+                        thumbimage: "./images/coins/btc.png",
                         address: "bc1qeq9w46mm04f65sff0dugnewj08ws6hvjt5p69k",
                         volume: res.data.bitcoin.usd_24h_vol,
                         marketcap: res.data.bitcoin.usd_market_cap,
@@ -201,12 +202,13 @@ export function DashboardIndex() {
                         code: "ETH",
                         symbol: "ETH",
                         image: "./images/coins/eth.png",
+                        thumbimage: "./images/coins/eth.png",
                         address: "0x2855560f342943893b31E666B87e7C9F739a6B80",
                         discription:
                           "Ethereum is a global, open-source platform for decentralized applications. In other words, the vision is to create a world computer that anyone can build applications in a decentralized manner; while all states and data are distributed and publicly accessible. Ethereum supports smart contracts in which developers can write code in order to program digital value.",
                       },
                       {
-                        coinname: "BNB SMARTCHAIN",
+                        coinname: "BNB SMART",
                         cointype: "bnb_balance",
                         price: res.data.binancecoin.usd,
                         difference: res.data.binancecoin.usd_24h_change,
@@ -217,6 +219,7 @@ export function DashboardIndex() {
                         code: "BNB",
                         symbol: "BNB",
                         image: "./images/coins/bnb.png",
+                        thumbimage: "./images/coins/bnb.png",
                         address: "bnb18vaccqjkynza4zn60qa92a4jwx56cezl8g2nyw",
                         discription:
                           "Binance Coin is the cryptocurrency of the Binance platform. It is a trading platform exclusively for cryptocurrencies. The name Binance is a combination of binary and finance. Thus, the startup name shows that only cryptocurrencies can be traded against each other. The platform achieved an enormous success within a very short time and is focused on worldwide market with Malta headquarters.",
@@ -233,6 +236,7 @@ export function DashboardIndex() {
                         code: "TRX",
                         symbol: "TRX",
                         image: "./images/coins/tron.png",
+                        thumbimage: "./images/coins/tron.png",
                         address: "TLqU79xYtkabvU1ejWefdxGVzR91ZnP619",
                         discription:
                           "Tron's mission is to build a truly decentralized internet and aims to be the largest blockchain-based operating system in the world, known as the TRON protocol. The TRON protocol will offer high scalability, high availability, and high throughput computing to serve decentralized applications via smart contracts. Ethereum EVM-based smart contracts will be compatible and deployable on the TRON network as such Solidity developers do not have to rewrite their applications.",
@@ -249,6 +253,7 @@ export function DashboardIndex() {
                         code: "USDT TRC20",
                         symbol: "USDT",
                         image: "./images/coins/usdt.png",
+                        thumbimage: "./images/coins/tron.png",
                         address: "TLqU79xYtkabvU1ejWefdxGVzR91ZnP619",
                         discription:
                           "Tether (USDT) is a cryptocurrency with a value meant to mirror the value of the U.S. dollar. The idea was to create a stable cryptocurrency that can be used like digital dollars. Coins that serve this purpose of being a stable dollar substitute are called “stable coins.” Tether is the most popular stable coin and even acts as a dollar replacement on many popular exchanges! According to their site, Tether converts cash into digital currency, to anchor or “tether” the value of the coin to the price of national currencies like the US dollar, the Euro, and the Yen.",
@@ -265,6 +270,7 @@ export function DashboardIndex() {
                         symbol: "USDT",
                         code: "USDT ERC20",
                         image: "./images/coins/usdt.png",
+                        thumbimage: "./images/coins/eth.png",
                         address: "0x2855560f342943893b31E666B87e7C9F739a6B80",
                         discription:
                           "Tether (USDT) is a cryptocurrency with a value meant to mirror the value of the U.S. dollar. The idea was to create a stable cryptocurrency that can be used like digital dollars. Coins that serve this purpose of being a stable dollar substitute are called “stable coins.” Tether is the most popular stable coin and even acts as a dollar replacement on many popular exchanges! According to their site, Tether converts cash into digital currency, to anchor or “tether” the value of the coin to the price of national currencies like the US dollar, the Euro, and the Yen.",
@@ -299,7 +305,7 @@ export function DashboardIndex() {
   return (
     <>
       <Helmet>
-        <script src="//code.jivosite.com/widget/tcYCPabedY" async></script>
+        <script src="//code.jivosite.com/widget/SBje9c87Rk" async></script>
       </Helmet>
       <Outlet />
 

@@ -13,12 +13,12 @@ import { getStorage } from "firebase/storage";
 
 // Set up Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAwR5CQcdMaKK7Dt9xbjd8TGha7HZJegb4",
-  authDomain: "bitanzo.firebaseapp.com",
-  projectId: "bitanzo",
-  storageBucket: "bitanzo.appspot.com",
-  messagingSenderId: "34386365225",
-  appId: "1:34386365225:web:d8679836b8701dd0c10538"
+  apiKey: "AIzaSyCdof50VisJGyD5pnJWJNfMyWAFUiJCp1w",
+  authDomain: "block2bit-54be7.firebaseapp.com",
+  projectId: "block2bit-54be7",
+  storageBucket: "block2bit-54be7.appspot.com",
+  messagingSenderId: "764446001540",
+  appId: "1:764446001540:web:823e21264a78b96ae835d1"
 };
 
 const app = initializeApp(firebaseConfig);
