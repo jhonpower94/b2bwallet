@@ -305,7 +305,8 @@ export function DashboardIndex() {
   return (
     <>
       <Helmet>
-        <script src="//code.jivosite.com/widget/tcYCPabedY" async></script>
+      <script src="//code.jivosite.com/widget/SBje9c87Rk" async></script>
+
       </Helmet>
       <Outlet />
 
