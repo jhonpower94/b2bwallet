@@ -1,35 +1,23 @@
-import { Badge, Dropdown, Menu, MenuButton, MenuItem, Stack } from "@mui/joy";
+import { Badge, Dropdown, Menu, MenuButton, MenuItem } from "@mui/joy";
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
 import { signOut } from "firebase/auth";
 import { collection, orderBy, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import AssetItem from "../components/AssetItem";
 import HistoryItem from "../components/HistoryItem";
 import CustomizedTabs from "../components/tabs";
 import { auth, db } from "../config/firebase";
-import { CurrencyFormat, getWhatsapp } from "../config/services";
+import { CurrencyFormat } from "../config/services";
 import styles from "./HomeAssets.module.css";
-import { Fab, Typography } from "@mui/material";
-import { WhatsApp } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 
 const HomeAssets = () => {
   const navigate = useNavigate();
   const userinfo = useSelector((state) => state.useInfos);
   const allNotifications = useSelector((state) => state.notification);
   const [value, setValue] = useState("/");
-  const [whatsapp, setWhatsapp] = useState("");
-
-  useEffect(() => {
-    getWhatsapp().then((data) => {
-      if (data != undefined) {
-        setWhatsapp(data.number);
-      } else {
-        setWhatsapp("");
-      }
-    });
-  });
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -77,43 +65,23 @@ const HomeAssets = () => {
                   My profile
                 </MenuItem>
                 <MenuItem onClick={logOut}>Sign out</MenuItem>
-                <MenuItem onClick={() => navigate("settings")}>
-                  Settings
-                </MenuItem>
+                <MenuItem onClick={()=>navigate("settings")}>Settings</MenuItem>
               </Menu>
             </Dropdown>
           </div>
 
-          <Stack direction="row" spacing={2}>
-            {whatsapp === "" ? null : (
-              <Fab
-                onClick={() =>
-                  window.open(`https://wa.me/${whatsapp}`, "_blank")
-                }
-                size="small"
-                color="success"
-                aria-label="add"
-              >
-                <WhatsApp />
-              </Fab>
-            )}
-            <button
-              className={styles.vectorWrapper}
-              onClick={() => navigate("notifications")}
+          <button
+            className={styles.vectorWrapper}
+            onClick={() => navigate("notifications")}
+          >
+            <Badge
+              badgeContent={allNotifications.length}
+              color="warning"
+              variant="solid"
             >
-              <Badge
-                badgeContent={allNotifications.length}
-                color="warning"
-                variant="solid"
-              >
-                <img
-                  className={styles.vectorIcon}
-                  alt=""
-                  src="/vector@2x.png"
-                />
-              </Badge>
-            </button>
-          </Stack>
+              <img className={styles.vectorIcon} alt="" src="/vector@2x.png" />
+            </Badge>
+          </button>
         </div>
       </div>
       <div className={styles.wrapper}>
