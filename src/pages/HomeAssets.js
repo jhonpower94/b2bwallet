@@ -1,4 +1,14 @@
-import { Badge, Dropdown, Menu, MenuButton, MenuItem, Stack } from "@mui/joy";
+import {
+  Badge,
+  CssVarsProvider,
+  Dropdown,
+  extendTheme,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  Stack,
+} from "@mui/joy";
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
 import { signOut } from "firebase/auth";
 import { collection, orderBy, query } from "firebase/firestore";
@@ -12,7 +22,33 @@ import { auth, db } from "../config/firebase";
 import { CurrencyFormat, getWhatsapp } from "../config/services";
 import styles from "./HomeAssets.module.css";
 import { Fab, Typography } from "@mui/material";
-import { WhatsApp } from "@mui/icons-material";
+import { Add, WhatsApp } from "@mui/icons-material";
+
+export const joyTheme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        // affects all Joy components that has `color="primary"` prop.
+        primary: {
+          50: "#ede7f6",
+          100: "#d1c4e9",
+          200: "#b39ddb",
+          300: "#9575cd",
+          400: "#7e57c2",
+          500: "#0152ff",
+          600: "#5e35b1",
+          700: "#0152ff",
+          800: "#4527a0",
+          900: "#78350f",
+        },
+      },
+    },
+  },
+  fontFamily: {
+    display: "Inter, var(--joy-fontFamily-fallback)",
+    body: "Inter, var(--joy-fontFamily-fallback)",
+  },
+});
 
 const HomeAssets = () => {
   const navigate = useNavigate();
@@ -125,36 +161,69 @@ const HomeAssets = () => {
           />
         </div>
       </div>
-      <div className={styles.circlebuttonGroups}>
-        <button
-          className={styles.buy}
-          onClick={() => window.open("https://www.kraken.com", "_blank")}
-        >
-          <img className={styles.frameIcon} alt="" src="/frame2@2x.png" />
-          <div className={styles.frame}>
+      <CssVarsProvider theme={joyTheme}>
+        <div className={styles.circlebuttonGroups}>
+          <Stack
+            direction="column"
+            spacing={1}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Dropdown>
+              <MenuButton
+                slots={{ root: IconButton }}
+                slotProps={{
+                  root: {
+                    variant: "solid",
+                    color: "primary",
+                    sx: {
+                      "--IconButton-size": "50px",
+                      width: "fit-content",
+                      borderRadius: 50,
+                    },
+                  },
+                }}
+                size="lg"
+              >
+                <Add />
+              </MenuButton>
+              <Menu size="lg">
+                {[
+                  { title: "Transak", link: "https://global.transak.com/" },
+                  { title: "AlchemyPay", link: "https://ramp.alchemypay.org" },
+                ].map((pay, index) => (
+                  <MenuItem
+                    key={index}
+                    onClick={() => window.open(pay.link, "_blank")}
+                  >
+                    {pay.title}
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Dropdown>
             <div className={styles.buy1}>Buy</div>
-          </div>
-        </button>
-        <button className={styles.buy} onClick={() => navigate("/swap")}>
-          <img className={styles.frameIcon} alt="" src="/frame3@2x.png" />
-          <div className={styles.frame1}>
-            <div className={styles.swap1}>Swap</div>
-          </div>
-        </button>
+          </Stack>
+          <button className={styles.buy} onClick={() => navigate("/swap")}>
+            <img className={styles.frameIcon} alt="" src="/frame3@2x.png" />
+            <div className={styles.frame1}>
+              <div className={styles.swap1}>Swap</div>
+            </div>
+          </button>
 
-        <button className={styles.buy} onClick={() => navigate("/allcoin")}>
-          <img className={styles.frameIcon} alt="" src="/frame5@2x.png" />
-          <div className={styles.frame3}>
-            <div className={styles.send1}>Send</div>
-          </div>
-        </button>
-        <button className={styles.buy} onClick={() => navigate("/receive")}>
-          <img className={styles.frameIcon} alt="" src="/frame6@2x.png" />
-          <div className={styles.frame4}>
-            <div className={styles.receive1}>Receive</div>
-          </div>
-        </button>
-      </div>
+          <button className={styles.buy} onClick={() => navigate("/allcoin")}>
+            <img className={styles.frameIcon} alt="" src="/frame5@2x.png" />
+            <div className={styles.frame3}>
+              <div className={styles.send1}>Send</div>
+            </div>
+          </button>
+          <button className={styles.buy} onClick={() => navigate("/receive")}>
+            <img className={styles.frameIcon} alt="" src="/frame6@2x.png" />
+            <div className={styles.frame4}>
+              <div className={styles.receive1}>Receive</div>
+            </div>
+          </button>
+        </div>
+      </CssVarsProvider>
       <CustomizedTabs value={value} handleChange={handleChange} />
       <Outlet />
     </div>
